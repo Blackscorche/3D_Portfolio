@@ -24,11 +24,17 @@ const ExperienceCard = ({ experience }) => {
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
-          />
+          <div className="bg-white rounded-full p-2 w-full h-full flex items-center justify-center border border-gray-300">
+            <img
+              src={experience.icon}
+              alt={experience.company_name}
+              className={`w-[60%] h-[60%] object-contain ${
+                experience.company_name.toLowerCase().includes("hng")
+                  ? "invert"
+                  : ""
+              }`}
+            />
+          </div>
         </div>
       }
     >
